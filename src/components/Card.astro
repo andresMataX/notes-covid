@@ -1,16 +1,63 @@
-<div class='card lg:card-side bg-neutral-content shadow-xl'>
+---
+import { Article } from '../interfaces/CovidNew'
+
+// interface Props {
+//   Article: Article
+// }
+
+// const { Article } = Astro.props
+---
+
+<div class='card bg-neutral-content shadow-xl'>
   <figure>
+    <!-- Media -->
     <img
-      src='https://ca-times.brightspotcdn.com/dims4/default/5878325/2147483647/strip/true/crop/3354x2191+0+114/resize/320x209!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ff2%2Fe7%2F52ddd4bf96c8db7ae099c6b77510%2F925ea62c9c42418abcffc8c5623159cc'
-      alt='Album'
+      class='w-full'
+      src='https://www.abs.gov.au/themes/custom/abs_theme/images/abs-meta-image.png'
+      alt='Get the facts about COVID-19 vaccines'
     />
   </figure>
 
-  <div class='card-body'>
-    <h2 class='card-title'>New album is released!</h2>
-    <p>Click the button to listen on Spotiwhy app.</p>
-    <div class='card-actions justify-end'>
-      <button class='btn btn-primary'>Listen</button>
+  <div class='card-body max-h-96'>
+    <h2 class='card-title'>
+      <!-- Title -->
+      Get the facts about COVID-19 vaccines
+    </h2>
+
+    <div class='flex w-full justify-between'>
+      <h3 class='text-base italic font-thin'>
+        <!-- author -->
+        - Poto
+      </h3>
+
+      <h4 class='text-base italic font-thin'>
+        <!-- date -->
+        2023-04-28 22:38:43
+      </h4>
+    </div>
+
+    <p class='overflow-y-auto'>
+      <!-- Summary -->
+      Looking to get the facts about COVID-19 vaccines? Here's what you need to know
+      about the different vaccines and the benefits of getting vaccinated. As the
+      coronavirus disease 2019 (COVID-19) pandemic continues, you might have questions
+      about COVID-19 vaccines. Find out about the different types of COVID-19 vaccines,
+      how they work, the possible side effects, and the benefits for you and your
+      family. COVID-19 vaccine benefits What are the benefits of getting a COVID-19
+      vaccine? A COVID-19 vaccine might: Protect you from getting COVID-19 Prevent
+      you from becoming seriously ill, becoming hospitalized or dying due to COVID-19
+      Limit the spread of COVID-19 Should I get the COVID-19 vaccine even if I've
+      already had COVID-19? Getting COVID-19 offers some natural protection or immunity
+      from reinfection with the virus that causes COVID-19 .
+    </p>
+    <div class='card-actions justify-end mt-4'>
+      <a
+        class='btn btn-primary w-full'
+        href='https://www.mayoclinic.org/diseases-conditions/coronavirus/in-depth/coronavirus-vaccine/art-20484859'
+        target='_blank'
+      >
+        Visitar
+      </a>
     </div>
   </div>
 </div>

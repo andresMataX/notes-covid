@@ -1,10 +1,27 @@
 ---
 import Card from '../components/Card.astro'
+import { New } from '../interfaces/CovidNew'
 import BaseLayout from '../layouts/BaseLayout.astro'
+
+const url =
+  'https://covid-19-news.p.rapidapi.com/v1/covid?q=covid&lang=es&sort_by=date&country=mx&media=True'
+const options = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '0a6e7859f1msh26d64a8e14b688ap1aeeadjsn30be00a09731',
+    'X-RapidAPI-Host': 'covid-19-news.p.rapidapi.com',
+  },
+}
+
+// const resp = await fetch(url, options)
+// const data: New = await resp.json()
 ---
 
 <BaseLayout title='México'>
-  <div class='grid grid-cols-2 gap-4'>
+  <div class='grid grid-cols-3 gap-8'>
+    <!-- {data.articles.map((article) => <Card Article={article} />)} -->
+
+    <Card />
     <Card />
     <Card />
     <Card />
