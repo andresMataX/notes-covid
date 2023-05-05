@@ -28,9 +28,28 @@ const { title } = Astro.props
           <h1 class='text-6xl font-semibold'>Últimas noticias</h1>
 
           <div class='flex gap-2'>
-            <a href='./' class='badge badge-primary badge-outline'>México</a>
-            <a href='./' class='badge badge-primary badge-outline'>Global</a>
-            <a href='./' class='badge badge-primary badge-outline'>
+            <a
+              href='./'
+              class={`badge badge-primary ${
+                title === 'México' ? '' : 'badge-outline'
+              } `}
+            >
+              México
+            </a>
+            <a
+              href='./global'
+              class={`badge badge-primary ${
+                title === 'Global' ? '' : 'badge-outline'
+              } `}
+            >
+              Global
+            </a>
+            <a
+              href='./estadisticas'
+              class={`badge badge-primary ${
+                title === 'Estadísticas' ? '' : 'badge-outline'
+              }`}
+            >
               Estadísticas | México
             </a>
           </div>
