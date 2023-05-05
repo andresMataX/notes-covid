@@ -13,12 +13,12 @@ const options = {
   },
 }
 
-// const resp = await fetch(url, options)
-// const data: New = await resp.json()
+const resp = await fetch(url, options)
+const data: New = await resp.json()
 ---
 
 <BaseLayout title='México'>
   <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-    <!-- {data.articles.map((article) => <Card Article={article} />)} -->
+    {data.articles.map((article) => <Card Article={article} />)}
   </div>
 </BaseLayout>
