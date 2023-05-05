@@ -1,61 +1,41 @@
 ---
 import { Article } from '../interfaces/CovidNew'
 
-// interface Props {
-//   Article: Article
-// }
+interface Props {
+  Article: Article
+}
 
-// const { Article } = Astro.props
+const { Article } = Astro.props
 ---
 
 <div class='card bg-neutral-content shadow-xl'>
-  <figure>
-    <!-- Media -->
-    <img
-      class='w-full'
-      src='https://www.abs.gov.au/themes/custom/abs_theme/images/abs-meta-image.png'
-      alt='Get the facts about COVID-19 vaccines'
-    />
+  <figure
+    class='w-full bg-cover h-60'
+    style={`background-image: url('${Article.media}');`}
+  >
   </figure>
 
   <div class='card-body max-h-96'>
     <h2 class='card-title'>
-      <!-- Title -->
-      Get the facts about COVID-19 vaccines
+      {Article.title}
     </h2>
 
     <div class='flex w-full justify-between'>
       <h3 class='text-base italic font-thin'>
-        <!-- author -->
-        - Poto
+        - {Article.author.length > 0 ? Article.author : 'Sin autor'}
       </h3>
 
       <h4 class='text-base italic font-thin'>
-        <!-- date -->
-        2023-04-28 22:38:43
+        {Article.published_date}
       </h4>
     </div>
 
     <p class='overflow-y-auto'>
-      <!-- Summary -->
-      Looking to get the facts about COVID-19 vaccines? Here's what you need to know
-      about the different vaccines and the benefits of getting vaccinated. As the
-      coronavirus disease 2019 (COVID-19) pandemic continues, you might have questions
-      about COVID-19 vaccines. Find out about the different types of COVID-19 vaccines,
-      how they work, the possible side effects, and the benefits for you and your
-      family. COVID-19 vaccine benefits What are the benefits of getting a COVID-19
-      vaccine? A COVID-19 vaccine might: Protect you from getting COVID-19 Prevent
-      you from becoming seriously ill, becoming hospitalized or dying due to COVID-19
-      Limit the spread of COVID-19 Should I get the COVID-19 vaccine even if I've
-      already had COVID-19? Getting COVID-19 offers some natural protection or immunity
-      from reinfection with the virus that causes COVID-19 .
+      {Article.summary.length > 0 ? Article.summary : 'Sin redacción'}
     </p>
-    <div class='card-actions justify-end mt-4'>
-      <a
-        class='btn btn-primary w-full'
-        href='https://www.mayoclinic.org/diseases-conditions/coronavirus/in-depth/coronavirus-vaccine/art-20484859'
-        target='_blank'
-      >
+
+    <div class='card-actions mt-4'>
+      <a class='btn btn-primary w-full' href={Article.link} target='_blank'>
         Visitar
       </a>
     </div>
