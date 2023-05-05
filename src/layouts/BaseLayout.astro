@@ -1,4 +1,6 @@
 ---
+import StatsGlobal from '../components/StatsGlobal.astro'
+import StatsMexico from '../components/StatsMexico.astro'
 import '../styles/BaseLayout.css'
 
 interface Props {
@@ -25,7 +27,13 @@ const { title } = Astro.props
 
       <div class='flex flex-col gap-16 pb-4'>
         <div class='flex flex-col gap-6'>
-          <h1 class='text-6xl font-semibold'>Últimas noticias</h1>
+          <div
+            class='flex flex-col gap-4 md:justify-between md:items-center md:flex-row'
+          >
+            <h1 class='text-6xl font-semibold'>Últimas noticias</h1>
+
+            {title === 'México' ? <StatsMexico /> : <StatsGlobal />}
+          </div>
 
           <div class='flex gap-2'>
             <a
@@ -43,14 +51,6 @@ const { title } = Astro.props
               } `}
             >
               Global
-            </a>
-            <a
-              href='./estadisticas'
-              class={`badge badge-primary ${
-                title === 'Estadísticas' ? '' : 'badge-outline'
-              }`}
-            >
-              Estadísticas | México
             </a>
           </div>
         </div>

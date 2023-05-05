@@ -1,0 +1,26 @@
+---
+const numberOfCases: number = 2069370
+const numberOfDeaths: number = 183692
+const numberOfRecoveries: number = 1620008
+
+const casesFormatted = numberOfCases.toLocaleString('es-MX')
+const deathsFormatted = numberOfDeaths.toLocaleString('es-MX')
+const recoveriesFormatted = numberOfRecoveries.toLocaleString('es-MX')
+---
+
+<div class='stats shadow'>
+  <div class='stat'>
+    <div class='stat-title text-center'>Total de casos confirmados</div>
+    <div class='stat-value text-primary text-center'>{casesFormatted}</div>
+  </div>
+
+  <div class='stat'>
+    <div class='stat-title text-center'>Total de muertes</div>
+    <div class='stat-value text-secondary text-center'>{deathsFormatted}</div>
+  </div>
+
+  <div class='stat'>
+    <div class='stat-title text-center'>Total de casos recuperados</div>
+    <div class='stat-value text-center'>{recoveriesFormatted}</div>
+  </div>
+</div>
